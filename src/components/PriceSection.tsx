@@ -1,4 +1,5 @@
 import { Cake, Cookie, IceCreamCone, CakeSlice } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const categories = [
   {

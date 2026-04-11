@@ -1,4 +1,5 @@
 import { Phone, MessageCircle, Instagram } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ContactSection = () => {
   return (

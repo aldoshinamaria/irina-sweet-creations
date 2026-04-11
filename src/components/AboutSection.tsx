@@ -1,4 +1,5 @@
 import { Heart, Cake, Star } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const features = [
   {
