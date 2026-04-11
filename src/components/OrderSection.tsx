@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
 import { CalendarIcon, Send } from "lucide-react";
