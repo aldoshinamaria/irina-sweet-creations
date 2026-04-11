@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, Instagram } from "lucide-react";
+import { Phone, Send } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ContactSection = () => {
@@ -20,22 +20,13 @@ const ContactSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
-              href="https://wa.me/"
+              href="https://t.me/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full font-sans font-medium text-sm tracking-wide hover:opacity-90 transition-opacity"
             >
-              <MessageCircle className="w-5 h-5" />
-              WhatsApp
-            </a>
-            <a
-              href="https://instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-border text-foreground rounded-full font-sans font-medium text-sm tracking-wide hover:bg-secondary transition-colors"
-            >
-              <Instagram className="w-5 h-5" />
-              Instagram
+              <Send className="w-5 h-5" />
+              Telegram
             </a>
             <a
               href="tel:+7"
