@@ -4,6 +4,8 @@ import { Menu, X } from "lucide-react";
 const links = [
   { href: "#about", label: "Обо мне" },
   { href: "#gallery", label: "Галерея" },
+  { href: "#prices", label: "Меню" },
+  { href: "#order", label: "Заказать" },
   { href: "#contacts", label: "Контакты" },
 ];
 
