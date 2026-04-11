@@ -4,6 +4,7 @@ import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 import gallery5 from "@/assets/gallery-5.jpg";
 import gallery6 from "@/assets/gallery-6.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const items = [
   { src: gallery1, alt: "Шоколадные конфеты и тарт", label: "Конфеты & Тарты" },
@@ -15,8 +16,9 @@ const items = [
 ];
 
 const GallerySection = () => {
+  const ref = useScrollAnimation();
   return (
-    <section id="gallery" className="py-24 bg-background">
+    <section id="gallery" className="py-24 bg-background" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-primary font-sans text-sm tracking-widest uppercase mb-4 block">

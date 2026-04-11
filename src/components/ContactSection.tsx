@@ -1,8 +1,10 @@
 import { Phone, MessageCircle, Instagram } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ContactSection = () => {
+  const ref = useScrollAnimation();
   return (
-    <section id="contacts" className="py-24 bg-background">
+    <section id="contacts" className="py-24 bg-background" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <span className="text-primary font-sans text-sm tracking-widest uppercase mb-4 block">

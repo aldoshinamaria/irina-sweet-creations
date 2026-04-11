@@ -1,4 +1,5 @@
 import { Heart, Cake, Star } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const features = [
   {
@@ -19,8 +20,9 @@ const features = [
 ];
 
 const AboutSection = () => {
+  const ref = useScrollAnimation();
   return (
-    <section id="about" className="py-24 bg-secondary">
+    <section id="about" className="py-24 bg-secondary" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-primary font-sans text-sm tracking-widest uppercase mb-4 block">
