@@ -5,7 +5,6 @@ const links = [
   { href: "#about", label: "Обо мне" },
   { href: "#gallery", label: "Галерея" },
   { href: "#prices", label: "Меню" },
-  { href: "#order", label: "Заказать" },
   { href: "#contacts", label: "Контакты" },
 ];
 
@@ -29,6 +28,12 @@ const Header = () => {
               {l.label}
             </a>
           ))}
+          <a
+            href="#order"
+            className="px-5 py-2 bg-primary text-primary-foreground rounded-full font-sans text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
+          >
+            Заказать
+          </a>
         </nav>
 
         <button
@@ -52,6 +57,13 @@ const Header = () => {
               {l.label}
             </a>
           ))}
+          <a
+            href="#order"
+            onClick={() => setOpen(false)}
+            className="mt-2 text-center px-5 py-3 bg-primary text-primary-foreground rounded-full font-sans text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
+          >
+            Заказать
+          </a>
         </nav>
       )}
     </header>
