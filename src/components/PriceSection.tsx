@@ -44,8 +44,9 @@ const categories = [
 ];
 
 const PriceSection = () => {
+  const ref = useScrollAnimation();
   return (
-    <section id="prices" className="py-24 bg-background">
+    <section id="prices" className="py-24 bg-background" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-primary font-sans text-sm tracking-widest uppercase mb-4 block">

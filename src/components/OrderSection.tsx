@@ -71,8 +71,9 @@ const OrderSection = () => {
     setIsSubmitting(false);
   };
 
+  const ref = useScrollAnimation();
   return (
-    <section id="order" className="py-24 bg-secondary/50">
+    <section id="order" className="py-24 bg-secondary/50" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">

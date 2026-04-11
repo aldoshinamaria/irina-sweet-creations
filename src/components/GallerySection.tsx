@@ -16,8 +16,9 @@ const items = [
 ];
 
 const GallerySection = () => {
+  const ref = useScrollAnimation();
   return (
-    <section id="gallery" className="py-24 bg-background">
+    <section id="gallery" className="py-24 bg-background" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-primary font-sans text-sm tracking-widest uppercase mb-4 block">
