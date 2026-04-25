@@ -23,6 +23,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const fillings = [
   { value: "chocolate", label: "Шоколадная", emoji: "🍫" },
@@ -48,7 +49,7 @@ const OrderSection = () => {
   const [wishes, setWishes] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!name.trim() || !phone.trim() || !filling || !size || !date) {
@@ -60,16 +61,30 @@ const OrderSection = () => {
 
     const selectedFilling = fillings.find((f) => f.value === filling);
     const selectedSize = sizes.find((s) => s.value === size);
-    const formattedDate = format(date, "d MMMM yyyy", { locale: ru });
 
-    const message = encodeURIComponent(
-      `Здравствуйте! Хочу заказать десерт 🎂\n\nИмя: ${name.trim()}\nТелефон: ${phone.trim()}\nНачинка: ${selectedFilling?.label}\nРазмер: ${selectedSize?.label} (${selectedSize?.description})\nДата: ${formattedDate}\n${wishes.trim() ? `Пожелания: ${wishes.trim()}` : ""}`
-    );
+    const { error } = await supabase.from("orders").insert({
+      customer_name: name.trim(),
+      customer_phone: phone.trim(),
+      filling: selectedFilling?.label ?? null,
+      size: selectedSize ? `${selectedSize.label} (${selectedSize.description})` : null,
+      desired_date: format(date, "yyyy-MM-dd"),
+      comment: wishes.trim() || null,
+    });
 
-    window.open(`https://wa.me/?text=${message}`, "_blank");
+    setIsSubmitting(false);
+
+    if (error) {
+      toast.error("Не удалось отправить заказ. Попробуйте ещё раз");
+      return;
+    }
 
     toast.success("Заявка отправлена! Я свяжусь с вами в ближайшее время 💛");
-    setIsSubmitting(false);
+    setName("");
+    setPhone("");
+    setFilling("");
+    setSize("");
+    setDate(undefined);
+    setWishes("");
   };
 
   const ref = useScrollAnimation();
