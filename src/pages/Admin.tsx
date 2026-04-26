@@ -40,9 +40,8 @@ const Admin = () => {
         <div className="max-w-md text-center space-y-4">
           <h1 className="font-heading text-2xl font-bold">Нет доступа</h1>
           <p className="text-muted-foreground text-sm">
-            Ваш аккаунт <strong>{user?.email}</strong> не имеет прав администратора.
-            Назначьте роль admin вручную в Cloud → Users → user_roles, добавив запись с
-            вашим user_id и role = 'admin'.
+            У аккаунта <strong>{user?.email}</strong> нет прав администратора.
+            Свяжитесь с владельцем сайта, чтобы запросить доступ.
           </p>
           <div className="flex gap-2 justify-center">
             <Button variant="outline" onClick={() => navigate("/")}>На сайт</Button>
