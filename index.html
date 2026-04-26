@@ -15,9 +15,26 @@
     <meta name="twitter:site" content="@Lovable" />
     <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2645b004-7eb0-4d31-9372-31318495a4b2/id-preview-21714dac--c684d49f-03a0-4837-aa30-5f487aa835f4.lovable.app-1775945128377.png">
     <meta property="og:title" content="Ирина Землякова — Домашний кондитер">
-  <meta name="twitter:title" content="Ирина Землякова — Домашний кондитер">
-  <meta property="og:description" content="Домашние десерты от Ирины Земляковой. Торты, пирожные, макаруны — приготовлены с любовью.">
-  <meta name="twitter:description" content="Домашние десерты от Ирины Земляковой. Торты, пирожные, макаруны — приготовлены с любовью.">
+    <meta name="twitter:title" content="Ирина Землякова — Домашний кондитер">
+    <meta property="og:description" content="Домашние десерты от Ирины Земляковой. Торты, пирожные, макаруны — приготовлены с любовью.">
+    <meta name="twitter:description" content="Домашние десерты от Ирины Земляковой. Торты, пирожные, макаруны — приготовлены с любовью.">
+
+    <script>
+      // Decode SPA redirect from 404.html back into a real path for React Router.
+      (function () {
+        var l = window.location;
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })();
+    </script>
 </head>
 
   <body>
